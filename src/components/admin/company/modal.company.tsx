@@ -224,7 +224,7 @@ const ModalCompany = (props: IProps) => {
                                     label="Ảnh Logo"
                                     name="logo"
                                     rules={[{
-                                        required: true,
+                                        required: false,
                                         message: 'Vui lòng không bỏ trống',
                                         validator: () => {
                                             if (dataLogo.length > 0) return Promise.resolve();
@@ -251,7 +251,7 @@ const ModalCompany = (props: IProps) => {
                                                             uid: uuidv4(),
                                                             name: dataInit?.logo ?? "",
                                                             status: 'done',
-                                                            url: `${import.meta.env.VITE_BACKEND_URL}/storage/company/${dataInit?.logo}`,
+                                                            url: dataInit?.logo,
                                                         }
                                                     ] : []
                                             }
